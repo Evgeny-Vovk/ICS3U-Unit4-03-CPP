@@ -5,33 +5,37 @@
 // ICS3U-Unit4-03.cpp File,
 // learning for... statement in C++.
 
+#include <cmath>
+#include <iomanip>
 #include <iostream>
 #include <string>
-#include <cmath>
 
 int main() {
     // creating variables
     std::string inputNumber;
+    float numberAsFloat;
     int numberAsInt;
     int counter;
 
     // input
-    std::cout << "Input a positive number: ";
+    std::cout << "Input a positive integer: ";
     std::cin >> inputNumber;
 
     // process and output
     std::cout << "\n";
     try {
         numberAsInt = std::stoi(inputNumber);
-        if (numberAsInt < 0) {
-            std::cout << "This is not a positive number.";
+        numberAsFloat = std::stof(inputNumber);
+        if (numberAsInt < 0 || numberAsFloat != numberAsInt) {
+            std::cout << "This is not a positive integer.";
         } else {
             for (counter = 0; counter <= numberAsInt; counter++) {
                 std::cout << counter << "² = " << pow(counter, 2) << "\n";
             }
         }
     } catch (std::invalid_argument) {
-        std::cout << "Invalid input, please try again following the requirements";
+        std::cout << "Invalid input,"
+                  << " please try again following the requirements";
     }
 
     std::cout << "\n\nDone.\n";
