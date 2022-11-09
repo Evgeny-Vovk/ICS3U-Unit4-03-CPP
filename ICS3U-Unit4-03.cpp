@@ -6,7 +6,6 @@
 // learning for... statement in C++.
 
 #include <cmath>
-#include <iomanip>
 #include <iostream>
 #include <string>
 
